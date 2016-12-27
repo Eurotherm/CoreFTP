@@ -3,7 +3,7 @@
     <Description>A simple .NET FTP library written entirely in C#, with no external dependencies</Description>
     <Copyright>Nick Briscoe 2016</Copyright>
     <AssemblyTitle>CoreFTP</AssemblyTitle>
-    <VersionPrefix>1.1.10</VersionPrefix>
+    <VersionPrefix>1.2.0</VersionPrefix>
     <Authors>Nick Briscoe</Authors>
     <TargetFrameworks>netstandard1.3;net452</TargetFrameworks>
     <AssemblyName>CoreFtp</AssemblyName>
@@ -55,6 +55,9 @@
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard1.3|AnyCPU'">
+    <OutputType>library</OutputType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard1.3|AnyCPU'">
     <OutputType>library</OutputType>
   </PropertyGroup>
   <Target Name="PostcompileScript" AfterTargets="Build" Condition=" '$(IsCrossTargetingBuild)' != 'true' ">
