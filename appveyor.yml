@@ -3,21 +3,17 @@ pull_requests:
   do_not_increment_build_number: true
 environment:
   DOTNET_CLI_TELEMETRY_OPTOUT: 1
-configuration: Release
 nuget:
   account_feed: true
   project_feed: true
   disable_publish_on_pr: true
+init:
+- ps: $Env:LABEL = "CI" + $Env:APPVEYOR_BUILD_NUMBER.PadLeft(5, "0")
 before_build:
 - ps: dotnet restore
 build_script:
-#build:
-#  project: CoreFtp.sln
-#  publish_nuget: true
-#  publish_nuget_symbols: true
-#  include_nuget_references: true
-#  parallel: true
-#  verbosity: minimal
+- dotnet build --configuration Release
+- dotnet pack --no-build --configuration Release .\src\CoreFtp\CoreFtp.csproj
 test: off
 artifacts:
 - path: src\CoreFtp\bin\Release\CoreFtp.*.nupkg

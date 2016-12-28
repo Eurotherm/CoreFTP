@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
   <PropertyGroup>
     <TargetFramework>netcoreapp1.0</TargetFramework>
+    <RuntimeIdentifier>win7-x86</RuntimeIdentifier>
     <AssemblyName>CoreFtp.Tests.Integration</AssemblyName>
     <OutputType>exe</OutputType>
     <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netcoreapp1.0' ">$(PackageTargetFallback);dnxcore50</PackageTargetFallback>
@@ -23,6 +24,7 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk">
       <Version>15.0.0-preview-20161024-02</Version>
     </PackageReference>
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
     <PackageReference Include="xunit.runner.visualstudio">
       <Version>2.2.0-beta4-build1194</Version>
     </PackageReference>
