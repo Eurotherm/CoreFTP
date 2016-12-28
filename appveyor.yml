@@ -7,8 +7,6 @@ nuget:
   account_feed: true
   project_feed: true
   disable_publish_on_pr: true
-init:
-- ps: $Env:LABEL = "CI" + $Env:APPVEYOR_BUILD_NUMBER.PadLeft(5, "0")
 before_build:
 - ps: dotnet restore
 build_script:
