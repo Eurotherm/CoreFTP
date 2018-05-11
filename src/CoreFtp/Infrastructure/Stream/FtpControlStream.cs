@@ -28,7 +28,7 @@
         protected SslStream SslStream { get; set; }
         protected int SocketPollInterval { get; } = 15000;
         protected DateTime LastActivity = DateTime.Now;
-        public Encoding Encoding { get; set; } = Encoding.ASCII;
+        public Encoding Encoding { get; set; } = Encoding.GetEncoding("ISO-8859-1");
 
         protected readonly SemaphoreSlim semaphore = new SemaphoreSlim( 1, 1 );
         protected readonly SemaphoreSlim receiveSemaphore = new SemaphoreSlim( 1, 1 );
